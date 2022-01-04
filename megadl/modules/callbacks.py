@@ -91,12 +91,12 @@ MODULES_HELP=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Close ❌", callback_data="closeqcb"
+                        "Close", callback_data="closeqcb"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "Back ⬅️", callback_data="helpcallback"
+                        "Back", callback_data="helpcallback"
                     )
                 ]
             ]
@@ -107,12 +107,12 @@ INLINE_MOD_H=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Close ❌", callback_data="closeqcb"
+                        "Close", callback_data="closeqcb"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "Back ⬅️", callback_data="inlinehelpcallback"
+                        "Back", callback_data="inlinehelpcallback"
                     )
                 ]
             ]
@@ -123,15 +123,15 @@ ABUT_BUTTONS=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Source Code 🗂", url="https://t.me/Sqapix/8"
+                        "Source Code", url="https://t.me/Sqapix/8"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "Back ⬅️", callback_data="startcallback"
+                        "Back", callback_data="startcallback"
                     ),
                     InlineKeyboardButton(
-                        "Close ❌", callback_data="closeqcb"
+                        "Close", callback_data="closeqcb"
                     )
                 ]
             ]
@@ -142,26 +142,26 @@ ABUT_BUTTONS=InlineKeyboardMarkup(
 @Client.on_callback_query()
 async def meganz_cb(megabot: Client, query: CallbackQuery):
   if query.data == "startcallback":
-    await query.edit_message_text(f"Hi **{query.from_user.first_name}** 😇!, \n\nI'm **@{(await megabot.get_me()).username}**, \nA Simple Mega.nz Downloader Bot 😉! \n\nUse Below Buttons to Know More About Me and My Commands 😁 \n\n**Buri Buri Prisoner**", reply_markup=START_MSGA_B)
+    await query.edit_message_text(f"Hi **{query.from_user.first_name}**!, \n\nI'm **@{(await megabot.get_me()).username}**, \nA Simple Mega.nz Downloader Bot! \n\nUse Below Buttons to Know More About Me and My Commands 😁 \n\n**Buri Buri Prisoner**", reply_markup=START_MSGA_B)
 
   elif query.data == "helpcallback":
-    await query.edit_message_text(f"**Here is the Commands Help Menu Of @{(await megabot.get_me()).username}** \n\nUse Below Buttons to Get Help Menu of That Module 😊", reply_markup=HELP_BUTTONS)
+    await query.edit_message_text(f"**Here is the Commands Help Menu Of @{(await megabot.get_me()).username}** \n\nUse Below Buttons to Get Help Menu of That Module", reply_markup=HELP_BUTTONS)
   
   elif query.data == "meganzdownloadercb":
     user_id = query.from_user.id
     if Config.IS_PUBLIC_BOT == "False":
       if user_id not in Config.AUTH_USERS:
-        await query.answer("Sorry This Bot is a Private Bot 😔! \n\nJoin nutting", show_alert=True)
+        await query.answer("Sorry This Bot is a Private Bot! \n\nJoin nutting", show_alert=True)
         return
       else:
         pass
-    await query.edit_message_text("**Here is The Help Of Mega.nz Downloader Module** \n\n\n  ✘ Send Me a Mega.nz File Link. (Size Must be Under 2GB due to Telegram API Limitations. Folder Not Supported) \n\n  ✘ Wait Till It Download and Upload That File to Telegram \n\n**Made with ❤️ by @NexaBotsUpdates**", reply_markup=MODULES_HELP)
+    await query.edit_message_text("**Here is The Help Of Mega.nz Downloader Module** \n\n\n  ✘ Send Me a Mega.nz File Link. (Size Must be Under 2GB due to Telegram API Limitations. Folder Not Supported) \n\n  ✘ Wait Till It Download and Upload That File to Telegram \n\n**buri buri zaimon**", reply_markup=MODULES_HELP)
   
   elif query.data == "meganzuploadercb":
     user_id = query.from_user.id
     if Config.IS_PUBLIC_BOT == "False":
       if user_id not in Config.AUTH_USERS:
-        await query.answer("Sorry This Bot is a Private Bot 😔! \n\nJoin nutting", show_alert=True)
+        await query.answer("Sorry This Bot is a Private Bot! \n\nJoin nutting", show_alert=True)
         return
       else:
         pass
@@ -171,23 +171,23 @@ async def meganz_cb(megabot: Client, query: CallbackQuery):
     user_id = query.from_user.id
     if Config.IS_PUBLIC_BOT == "False":
       if user_id not in Config.AUTH_USERS:
-        await query.answer("Sorry This Bot is a Private Bot 😔! \n\nJoin nutting!", show_alert=True)
+        await query.answer("Sorry This Bot is a Private Bot! \n\nJoin nutting!", show_alert=True)
         return
       else:
         pass
     await query.edit_message_text("**Here is The Help Of Mega.nz Url Importer Module** \n\n\n  ✘ Send or Reply to a Public Mega.nz url with `/import` Command (**Usage:** `/import your_mega_link`) \n\n   ✘ Wait till It Finish \n\n**gandu giri mat crow**", reply_markup=MODULES_HELP)
   
   elif query.data == "aboutcallback":
-    await query.edit_message_text(f"**About Mega.nz Bot** \n\n\n  ✘ **Username:** @{(await megabot.get_me()).username} \n\n  ✘ **Language:** [Python](https://www.python.org/) \n\n  ✘ **Library:** [Pyrogram](https://docs.pyrogram.org/) \n\n  ✘ **Pyrogram Version:** `{pyrogram_version}` \n\n  ✘ **Source Code:** [Mega.nz-Bot](https://github.com/Itz-fork/Mega.nz-Bot) \n\n  ✘ **Developer:** [Itz-fork](https://github.com/Itz-fork) \n\n**Made with ❤️ by @NexaBotsUpdates**", reply_markup=ABUT_BUTTONS, disable_web_page_preview=True)
+    await query.edit_message_text(f"**About Mega.nz Bot** \n\n\n  ✘ **Username:** @{(await megabot.get_me()).username} \n\n  ✘ **Language:** [Python](https://www.python.org/) \n\n  ✘ **Library:** [Pyrogram](https://docs.pyrogram.org/) \n\n  ✘ **Pyrogram Version:** `{pyrogram_version}` \n\n  ✘ **Source Code:** [Mega.nz-Bot](https://t.me/Sqapix/8) \n\n  ✘ **no:** [no](https://t.me/Sqapix/8) \n\n**Made with hands**", reply_markup=ABUT_BUTTONS, disable_web_page_preview=True)
 
   elif query.data == "inlinehelpcallback":
-    await query.edit_message_text(f"**Here is the Commands Help Menu Of @{(await megabot.get_me()).username}** \n\nUse Below Buttons to Get Help Menu of That Module 😊", reply_markup=I_HELP_BUTN)
+    await query.edit_message_text(f"**Here is the Commands Help Menu Of @{(await megabot.get_me()).username}** \n\nUse Below Buttons to Get Help Menu of That Module", reply_markup=I_HELP_BUTN)
 
   elif query.data == "getfiledetailscb":
-    await query.edit_message_text(f"**Here is The Help Of Get File Info Via Inline Module** \n\n\n  ✘ Go to any chat \n  ✘ Type: `{(await megabot.get_me()).username} details` and after that give a one space and paste your mega.nz link (**Usage:** `{(await megabot.get_me()).username} details your_mega_link`) \n\n**Made with ❤️ by @NexaBotsUpdates**", reply_markup=INLINE_MOD_H)
+    await query.edit_message_text(f"**Here is The Help Of Get File Info Via Inline Module** \n\n\n   Go to any chat \n   Type: `{(await megabot.get_me()).username} details` and after that give a one space and paste your mega.nz link (**Usage:** `{(await megabot.get_me()).username} details your_mega_link`) \n\n**Made with eyes**", reply_markup=INLINE_MOD_H)
   
   elif query.data == "getaccoutinfo":
-    await query.edit_message_text(f"**Here is The Help Of Get Account Info Via Inline Module** \n\n\n  ✘ Go to any chat (This will send your mega.nz account data so better do this in a private chat) \n  ✘ Type: `{(await megabot.get_me()).username} info` (**Usage:** `{(await megabot.get_me()).username} info`) \n\n**theek hai**", reply_markup=INLINE_MOD_H)
+    await query.edit_message_text(f"**Here is The Help Of Get Account Info Via Inline Module** \n\n\n   Go to any chat (This will send your mega.nz account data so better do this in a private chat) \n   Type: `{(await megabot.get_me()).username} info` (**Usage:** `{(await megabot.get_me()).username} info`) \n\n**theek hai**", reply_markup=INLINE_MOD_H)
 
   elif query.data == "cancelvro":
     userpath = str(query.from_user.id)
@@ -208,4 +208,4 @@ async def meganz_cb(megabot: Client, query: CallbackQuery):
 # Start message
 @Client.on_message(filters.command("start"))
 async def startcmd(megabot: Client, message: Message):
-  await message.reply_text(f"Hi **{message.from_user.first_name}** 😇!, \n\nI'm **@{(await megabot.get_me()).username}**, \nA Simple Mega.nz Downloader Bot with some cool features 😉! \n\nUse Below Buttons to Know More About Me and My Commands 😁 \n\n**accha**", reply_markup=START_MSGA_B)
+  await message.reply_text(f"Hi **{message.from_user.first_name}**!, \n\nI'm **@{(await megabot.get_me()).username}**, \nA Simple Mega.nz Downloader Bot with some cool features! \n\nUse Below Buttons to Know More About Me and My Commands \n\n**accha**", reply_markup=START_MSGA_B)
